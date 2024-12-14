@@ -1,12 +1,8 @@
 # Converting Iterative Functions to Recursive Functions
 
-This document provides a step-by-step guide on how to convert an iterative function into a recursive function. Understanding this process is essential for improving code readability and leveraging recursion's power in problem-solving.
+This document provides a step-by-step guide on how to convert an iterative function into a recursive function. 
 
-## Why Convert?
-
-Recursive methods can often be more intuitive and easier to understand than their iterative counterparts. Converting iterative code into recursive functions can help clarify the logic behind the algorithm, making it easier to follow and maintain.
-
-## General Steps for Conversion
+##  Steps for Conversion
 
 ### Step 1: Identify the Loop Structure
 
