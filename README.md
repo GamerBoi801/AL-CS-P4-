@@ -60,7 +60,7 @@ Welcome to the comprehensive notes for Computer Science Paper 4 at A Level. This
 - **Factorial**: [factorial.py](recursion/factorial.py)
 - **Compound Interest**: [compound_intrest.py](recursion/compound_intrest.py)
 - **Converting Iterative to Recursive**: [iter_to_recu.md](recursion/iter_to_recu.md)
-- **Understanding Recursion**: [recursion.md](recursion/recursion.md)
+- **Understanding Recursion at a greater detail**: [recursion.md](recursion/recursion.md)
 
 ---
 
