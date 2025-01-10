@@ -1,6 +1,6 @@
 # Converting Iterative Functions to Recursive Functions
 
-This document provides a step-by-step guide on how to convert an iterative function into a recursive function. 
+This guide provides a step-by-step guide on how to convert an iterative function into a recursive function. 
 
 ##  Steps for Conversion
 
