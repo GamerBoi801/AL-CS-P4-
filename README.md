@@ -17,6 +17,9 @@ Welcome to the comprehensive notes for Computer Science Paper 4 at A Level. This
      - [Queue Implementations](#queue-implementations)
    - [Stack](#stack)
      - [Stack Implementations](#stack-implementations)
+   - [Binary Tree](/binary%20tree/)
+   - [Linked List](/linked%20list/)
+
 3. [Recursion](#recursion)
    - [Factorial](recursion/factorial.py)
    - [Compound Interest](recursion/compound_intrest.py)
