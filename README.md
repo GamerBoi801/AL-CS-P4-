@@ -7,6 +7,7 @@ Welcome to the comprehensive notes for Computer Science Paper 4 at A Level. This
 1. [Algorithms](#algorithms)
    - [Searching](#searching)
      - [Linear Search](algorithms/searching/linear_search.py)
+     - [Binary Search](algorithms/searching/bin_search.py)
    - [Sorting](#sorting)
      - [Bubble Sort](algorithms/sorting/bubble_sort.py)
      - [Insertion Sort](algorithms/sorting/insertion_sort.py)
