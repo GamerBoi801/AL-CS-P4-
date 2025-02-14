@@ -34,3 +34,7 @@ if result:
     print(f"Target {target_value} found at index {result}")
 else:
     print(f"Target {target_value} not found in the array")
+
+"""How does it work?
+    The binary search algorithm works by repeatedly dividing the sorted array in half 
+    until the target value is found."""
