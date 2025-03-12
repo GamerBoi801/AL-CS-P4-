@@ -1,8 +1,8 @@
 # Computer Science Paper 4 A Level Notes
 
-Welcome to the comprehensive notes for Computer Science Paper 4 at A Level. This repository contains detailed explanations, code examples, and resources to help you excel in your studies.
+###  Welcome to the comprehensive notes for Computer Science Paper 4 at A Level. This repository contains detailed explanations, code examples, and resources to help you excel in your studies.
 
-## Table of Contents
+## **Table of Contents**
 
 1. [Algorithms](#algorithms)
    - [Searching](#searching)
@@ -55,7 +55,7 @@ Welcome to the comprehensive notes for Computer Science Paper 4 at A Level. This
 
 #### Stack Implementations
 
-- **Python**: [stack.py](stack/stack.py)
+- **Python**: [stack.p```y](stack/stack.py)
 - **Java**: [stack.java](stack/stack.java)
 - **Visual Basic**: [stack.vb](stack/stack.vb)
 
