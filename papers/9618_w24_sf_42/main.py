@@ -1,4 +1,5 @@
-class EventItem():
+#q1
+"""class EventItem():
     def __init__(self, EventName, Type, Difficulty):
         self._EventName = EventName
         self._Type = Type
@@ -35,7 +36,6 @@ def Character():
         elif Type == 'drive':
             chance =  self._Drive
         
-
         if chance  >= difficulty:
             return 100
         else:
@@ -64,4 +64,69 @@ if __name__ == '__main__':
 
     Character1 = Character('Tarz', 5, 3, 5, 1)
     Character2 = Character('Drive', 2, 2, 3, 4)
+
+    p1, p2 = 0, 0
+
+    for event in range(5):
+      char1_score = Character1.CalculateScore(Group[event].EventType(), Group[event].GetDifficulty()) 
+      char2_score = Character2.CalculateScore(Group[event].EventType(), Group[event].GetDifficulty())
+
+      if char1_score > char2_score:
+          p1 += 1
+          print(f'{Character1.GetName()} wins {Group[event].GetName()}')
+       elif char1_score < char2_score:
+           p2 += 1
+           print(f'{Character2.GetName()} wins {Group[event].GetName()}')
+       else:
+           print(f'{Character1.GetName()} and {Character2.GetName()} draw in {Group[event].GetName()}')
+"""
+
+"""#q
+null = -1
+class Queue():
+    def __init__(self):
+        self._QueueArray = [-1] * 100
+        self._HeadPointer = -1  #sotres index of first data
+        self._TailPointer = 0    # stores nex free location
+
+
+def Enqueue(TheQueue, data):
+    if TheQueue._HeadPointer == -1:
+        TheQueue._QueueArray[TheQueue._TailPointer] = data
+        TheQueue._HeadPointer = 0
+        TheQueue._TailPointer += 1
+        return 1
     
+    elif TheQueue._TailPointer > 99:
+        return null
+    else:
+        TheQueue._QueueArray[TheQueue._TailPointer] = data
+        TheQueue._TailPointer += 1
+        return 1
+    
+def ReturnAllData(TheQueue):
+    line = ''
+    head_counter = 0
+    while TheQueue._QueueArray[head_counter] != -1:
+        line += str(TheQueue._QueueArray[head_counter]) + ' '
+        head_counter += 1
+    return line
+
+if __name__ == '__main__':
+    TheQueue = Queue()
+    inputs = [10,9,8,7,6,5,4,3,2,1]
+    for i in inputs:
+        Enqueue(TheQueue, i)
+    print(ReturnAllData(TheQueue))"""
+
+#q3
+
+def ReadData():
+    with open('HighScoreTable.txt', 'r') as file:
+        for i in range(7):
+            HighScores[i][0] = file.readline().strip()
+            HighScores[i][1] = int(file.readline().strip())
+            HighScores[i][2] = int(file.readline().strip())
+
+HighScores = [[None for _ in range(3)]for _ in range(7)]
+ReadData()

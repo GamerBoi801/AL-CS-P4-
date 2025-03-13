@@ -1,6 +1,6 @@
-## Dequeue
+# Dequeue
 
-The **dequeue** operation removes an item from the front of a circular queue. A circular queue allows for efficient use of space by connecting the end of the queue back to the beginning, which helps in utilizing available space effectively.
+### The **dequeue** operation removes an item from the front of a circular queue. A circular queue allows for efficient use of space by connecting the end of the queue back to the beginning, which helps in utilizing available space effectively.
 
 ###  Components
 

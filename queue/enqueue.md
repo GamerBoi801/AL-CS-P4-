@@ -1,4 +1,4 @@
-## Enqueue in Circular Queue
+# Enqueue in Circular Queue
 ## Overview
 
 The **enqueue** operation adds an item to the end of a circular queue. A circular queue allows for efficient use of space by connecting the end of the queue back to the beginning, which helps in utilizing available space effectively.
