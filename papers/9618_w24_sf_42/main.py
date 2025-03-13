@@ -121,12 +121,27 @@ if __name__ == '__main__':
 
 #q3
 
-def ReadData():
+def ReadData(HighScores):
     with open('HighScoreTable.txt', 'r') as file:
         for i in range(7):
             HighScores[i][0] = file.readline().strip()
             HighScores[i][1] = int(file.readline().strip())
             HighScores[i][2] = int(file.readline().strip())
 
+def OutputData(HighScores):
+    for i in range(7):
+        for j in range(3):
+            print(HighScores[i][j])
+
+def SortSuccess(HighScores):
+    count = 0
+    length = len(HighScores)
+    for i in range(length):
+        for j in range(0, length - i- 1):
+            if int(HighScores[j][1]) < int(HighScores[j+1][])
+
 HighScores = [[None for _ in range(3)]for _ in range(7)]
-ReadData()
+ReadData(HighScores)
+OutputData(HighScores)
+SortSuccess(HighScores)
+OutputData(HighScores)
