@@ -138,7 +138,20 @@ def SortSuccess(HighScores):
     length = len(HighScores)
     for i in range(length):
         for j in range(0, length - i- 1):
-            if int(HighScores[j][1]) < int(HighScores[j+1][])
+            if int(HighScores[j][2]) < int(HighScores[j+1][2]):
+                thatplayerId =  HighScores[j][0]
+                game_level = HighScores[j][1]
+                score = HighScores[j][2]
+                #SWAP all the values 
+                HighScores[j][0] = HighScores[j+1][0]
+                HighScores[j][1] = HighScores[j+1][1]
+                HighScores[j][2] = HighScores[j+1][2]
+                HighScores[j+1][0] = thatplayerId
+                HighScores[j+1][1] = game_level
+                HighScores[j+1][2] = score
+                count += 1
+    print(f'Number of swaps: {count}')  
+    return HighScores
 
 HighScores = [[None for _ in range(3)]for _ in range(7)]
 ReadData(HighScores)
