@@ -1,5 +1,5 @@
 """Q1 """
-global Jobs
+"""global Jobs
 Jobs = [[_ for _ in range(0, 1)] for _ in range(0, 99)]  
 
 global NumberOfJobs
@@ -48,4 +48,36 @@ if __name__ == '__main__':
     AddJob(16, 50)
     AddJob(17, 60)
     InsertionSort()
-    print(Jobs)
+    print(Jobs)"""
+
+#q3
+Queue = [None] * 100
+head_pointer = -1  #pts to fist no
+tail_pointer = 0  # pts to next free space
+
+def Enqueue(para : int):
+    global Queue, head_pointer, tail_pointer
+    
+    #check to see if the queue is full || empty
+    if tail_pointer == 100:
+        return False
+    
+    if head_pointer == -1:
+        head_pointer = 0
+
+    #add an item to the queue tail pointer
+    Queue[tail_pointer] = para
+
+    if tail_pointer == len(Queue) - 1:
+        tail_pointer = 0 #wraps it around the beginning
+    else:
+        tail_pointer += 1
+    return True
+
+if __name__ == '__main__':
+    # Test the Enqueue function
+    for i in range(1, 20):
+        if Enqueue(i):
+            print(f"Enqueued: {i}")
+        else:
+            print("Queue is full, cannot enqueue.")
