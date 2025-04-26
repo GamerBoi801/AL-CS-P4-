@@ -74,10 +74,22 @@ def Enqueue(para : int):
         tail_pointer += 1
     return True
 
+def recursive_output(count: int):
+    global head_pointer
+    #base case (condition where the loop stops)
+    # in this scenario loop stops where count == head_pointer and the for loop decrements by -1
+    if count == head_pointer:
+        return Queue[count]
+    else:
+       return ( Queue[count] + recursive_output(count - 1))
+
 if __name__ == '__main__':
     # Test the Enqueue function
-    for i in range(1, 20):
+    """for i in range(1, 20):
         if Enqueue(i):
             print(f"Enqueued: {i}")
         else:
             print("Queue is full, cannot enqueue.")
+
+    """
+    print(recursive_output(3))

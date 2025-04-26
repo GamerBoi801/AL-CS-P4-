@@ -2,6 +2,14 @@
 
 ###  Welcome to the comprehensive notes for Computer Science Paper 4 at A Level. This repository contains detailed explanations, code examples, and resources to help you excel in your studies.
 
+# For Last Day Prep see:
+-[ recursive - iterative](#papers/9618_w22_qp_42/main.py) 
+
+- Data structures
+- sorting and finding algorithms
+- [Do This q2 && post order traversal for bin tree question](#papers/9618_w22_qp_43/main.py)
+- Post Order Traversals 
+
 ## **Table of Contents**
 
 1. [Algorithms](#algorithms)
