@@ -73,36 +73,29 @@ RootPointer = 0
 def SearchValue(root: int, ValueToFind: int):
     if root == -1:
         return -1
-    else:
-        # Check if current node's data matches the value
-        if ArrayNodes[root][1] == ValueToFind:
-            return root
-        # If data is -1 (null), value not found
-        elif ArrayNodes[root][1] == -1:
-            return -1
-        # If current node's data is greater than value, search left subtree
-        elif ArrayNodes[root][1] > ValueToFind:
-            return SearchValue(ArrayNodes[root][0], ValueToFind)
-        # If current node's data is less than value, search right subtree
-        else:
-            return SearchValue(ArrayNodes[root][2], ValueToFind)
-        
+
+    if ArrayNodes[root][1] == ValueToFind:
+        return root
+
+    # Search left subtree
+    left_result = SearchValue(ArrayNodes[root][0], ValueToFind)
+    if left_result != -1:
+        return left_result
+
+    # Search right subtree
+    return SearchValue(ArrayNodes[root][2], ValueToFind)
 
 def PostOrder(root):
-    #checks if whether left node is empty or not
     if root == -1:
-        return ArrayNodes[root, 1]
-    
-    #left order traversal if left child exists
-    if ArrayNodes[root, 0] != -1: 
-        PostOrder(ArrayNodes[root, 0])
-    
-    #right order traversal of the right child exists
-    if ArrayNodes[root, 2] != -1:
-        PostOrder(ArrayNodes[root, 2])
-    
-    #prints the current node
-    print(ArrayNodes[root, 1])
+        return
+    if ArrayNodes[root][0] != -1:
+        PostOrder(ArrayNodes[root][0])
+    if ArrayNodes[root][2] != -1:
+        PostOrder(ArrayNodes[root][2])
+    print(ArrayNodes[root][1])
 
-
-    
+if __name__ == '__main__':
+    index = SearchValue(RootPointer, 15)
+    print(f"Search result index: {index}")
+    print("Post-order traversal output:")
+    PostOrder(RootPointer)
