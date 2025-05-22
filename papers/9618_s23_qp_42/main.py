@@ -50,7 +50,7 @@ NumberOfItems = 0
 
 def Enqueue(record: SaleData):
     global NumberOfItems, Head,Tail
-    if NumberOfItems == 9:
+    if NumberOfItems == len(CircularQueue):
         return -1
     CircularQueue[Tail] = record
     
@@ -68,7 +68,7 @@ def Dequeue():
         return SaleData("", -1)
     
     item = CircularQueue[Head] #returning the first item in the queue
-    Head += 1
+    Head = (Head +1) % len(CircularQueue)
     NumberOfItems -= 1
     return item
 
@@ -80,7 +80,7 @@ def EnterRecord():
 
 
     if Enqueue(SaleData(id, quantity)) == 1:
-        print('success')
+        print('stored')
     else:
         print('Full')
 
@@ -93,7 +93,9 @@ if __name__ == '__main__':
     if result._id == "" and result._quantity == -1:
         Dequeue()
     else:
-        print(f'{result.id} && {result.quantity}')
+        print(f'{result._id} && {result._quantity}')
 
     EnterRecord()
-    print(CircularQueue)
+    
+    for record in CircularQueue:
+        print(f'{record._id} && {record._quantity}')
