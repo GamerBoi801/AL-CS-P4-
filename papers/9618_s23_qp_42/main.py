@@ -37,7 +37,7 @@ if __name__ == '__main__':
     SortDescending()
     print(Animals)
 """
-#2
+"""#2
 class SaleData():
     def __init__(self, id, quantity):
         self._id = id
@@ -98,4 +98,36 @@ if __name__ == '__main__':
     EnterRecord()
     
     for record in CircularQueue:
-        print(f'{record._id} && {record._quantity}')
+        print(f'{record._id} && {record._quantity}')"""
+
+#q3
+class Employee():
+    def __init__(self, HourlyPay, EmployeeNumber, JobTitle):
+        self._HourlyPay = HourlyPay
+        self._EmployeeNumber = EmployeeNumber
+        self._JobTitle = JobTitle
+        self._PayYear2022 = [0.0 for _ in range(0, 51)]
+
+    def GetEmployeeNumber(self):
+        return self._EmployeeNumber
+
+    def SetPay(self, WeekNumber, numberOfHours):
+        pay = float(self._HourlyPay * numberOfHours)
+        self._PayYear2022[WeekNumber] = pay
+
+    def GetTotalPay(self):
+        i = 0
+        total = 0.0
+        while self._PayYear2022[i] != 0.0:
+            total += float(self._PayYear2022[i])
+        
+        return total
+
+class Manager(Employee):
+    def __init__(self, HourlyPay, EmployeeNumber, JobTitle, BonusValue):
+        super().__init__(HourlyPay, EmployeeNumber, JobTitle)
+        self._BonusValue = BonusValue
+
+
+    def SetPay(self, WeekNumber, num_of_hrs):
+        percentage_increase = float(self._BonusValue / 100 )

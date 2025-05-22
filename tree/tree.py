@@ -34,11 +34,11 @@ def add(data):
                 print(f'Added node {data} to the right of {current.data}')
                 break  #exist the loop after insertion
         
-        else: #if the ndoes are equal then doesn't add them  
+        else: #if the nodes are equal then doesn't add them  
             print(f'node {data} already exists.')
             return
 
-#test case for aaddition
+#test case for addition
 add(10)
 add(5)
 add(15)
