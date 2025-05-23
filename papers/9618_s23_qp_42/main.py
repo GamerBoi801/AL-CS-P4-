@@ -124,10 +124,56 @@ class Employee():
         return total
 
 class Manager(Employee):
-    def __init__(self, HourlyPay, EmployeeNumber, JobTitle, BonusValue):
+    def __init__(self, BonusValue,HourlyPay, EmployeeNumber, JobTitle):
         super().__init__(HourlyPay, EmployeeNumber, JobTitle)
         self._BonusValue = BonusValue
 
 
-    def SetPay(self, WeekNumber, num_of_hrs):
-        percentage_increase = float(self._BonusValue / 100 )
+    def SetPay(self, WeekNumber, Hours):
+        Hours = Hours * (float(self._BonusValue / 100) + 1.0)
+        super().SetPay(WeekNumber, Hours)
+
+
+
+def EnterHours():
+    global EmployeeArray
+    with open('HoursWeek1.txt', "r") as file:
+        for _ in range(8):
+            num = file.readline().strip()
+            hours = file.readline().strip()
+            for i in range(len(EmployeeArray)):
+                if EmployeeArray[i].GetEmployeeNumber() == num:
+                    EmployeeArray[i].SetPay(0, int(hours))
+            
+
+def main():
+    EmployeeArray = [None for _ in range(8)]
+    with open('Employees.txt', 'r') as file:
+        lines = file.readlines()
+        i=0
+        for index in range(8):
+
+            hourly_pay = float(lines[i].strip())
+            EmployeeNumber = lines[i+1].strip()
+            next_line = lines[i+2].strip()
+
+            try:
+                #trying to interpret next_line as a bonus manager
+                #if converting to float does not result in an error them that line is a bonus_value
+                bonus_value = float(next_line)
+                job_title = lines[i+3].strip()
+                EmployeeArray[i] = Manager(bonus_value, hourly_pay, EmployeeNumber, job_title)
+                i+= 4
+            
+            except ValueError:
+                job_title = next_line
+                EmployeeArray[i]  = Employee(hourly_pay, EmployeeNumber, job_title)
+                i += 3
+
+    
+    EnterHours()
+    for i in range(8):
+        print(f'Employee nUmber: {EmployeeArray[i].GetEmployeeNumber()} && TotalPay: {EmployeeArray[i].GetTotalPay()}')
+
+if __name__ == '__main__':
+    main()
